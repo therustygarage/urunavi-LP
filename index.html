@@ -98,17 +98,26 @@
   .hero-note{font-size:12px;color:#bdbdbd;margin-top:14px;}
 
   /* ---------- PAIN (checklist / voice rows) ---------- */
-  .check-panel{margin-top:30px;background:var(--black);border-radius:20px;padding:10px 22px 26px;}
-  .check-row{display:flex;gap:14px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.14);}
-  .check-row:last-of-type{border-bottom:none;}
-  .check-icon{
-    width:30px;height:30px;flex:none;margin-top:4px;border-radius:50%;
-    background:var(--orange);color:var(--black);
-    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;
+  .check-panel{margin-top:30px;background:var(--black);border-radius:20px;padding:22px 18px 24px;}
+  .check-card{background:#1b1b1b;border:1px solid #2c2c2c;border-radius:16px;padding:16px;margin-bottom:14px;}
+  .check-card:last-of-type{margin-bottom:0;}
+  .bubble{
+    position:relative;background:#2a2a2a;border-radius:12px;
+    padding:12px 14px 12px 48px;
+    font-size:16px;font-weight:900;color:var(--white);line-height:1.55;
   }
-  .check-row .voice{font-size:18px;font-weight:900;color:var(--white);line-height:1.55;}
-  .check-row .answer{font-size:15px;color:#dcdcdc;margin-top:6px;line-height:1.85;}
-  .check-row .answer strong{color:var(--orange);font-weight:900;}
+  .bubble::after{
+    content:"";position:absolute;left:36px;bottom:-7px;
+    border:8px solid transparent;border-top-color:#2a2a2a;border-bottom:0;
+  }
+  .check-icon{
+    position:absolute;left:13px;top:13px;width:24px;height:24px;border-radius:50%;
+    background:var(--orange);color:var(--black);
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;
+  }
+  .flow-arrow{color:var(--orange);font-size:12px;font-weight:900;margin:13px 0 5px 22px;}
+  .check-card .answer{font-size:15px;color:#dcdcdc;line-height:1.8;padding:0 4px;}
+  .check-card .answer strong{color:var(--orange);font-weight:900;font-size:16px;}
   .check-foot{
     margin-top:6px;background:rgba(247,154,75,.13);border:1px solid rgba(247,154,75,.45);
     border-radius:var(--radius);padding:16px 18px;
@@ -287,33 +296,25 @@
     <h2>こんな方へ</h2>
     <p class="sec-lead">当てはまるものはありますか？ 1つでもあれば、URUNAVIが向いているかもしれません。</p>
     <div class="check-panel">
-      <div class="check-row">
-        <span class="check-icon">✓</span>
-        <div>
-          <p class="voice">「買取査定が、思ったより安かった」</p>
-          <p class="answer"><strong>実際に売れた価格をもとに精算</strong>するので、買取より相場に近い金額が手元に残ります。</p>
-        </div>
+      <div class="check-card">
+        <div class="bubble"><span class="check-icon">✓</span>「買取査定が、思ったより安かった」</div>
+        <div class="flow-arrow">▼</div>
+        <p class="answer"><strong>実際に売れた価格をもとに精算</strong>するので、買取より相場に近い金額が手元に残ります。</p>
       </div>
-      <div class="check-row">
-        <span class="check-icon">✓</span>
-        <div>
-          <p class="voice">「個人売買は、交渉も手続きも面倒そう」</p>
-          <p class="answer"><strong>面倒なやり取りは全部代行</strong>します。問い合わせ対応・価格交渉・名義変更・受渡し調整まで、トラブルの窓口もこちらです。</p>
-        </div>
+      <div class="check-card">
+        <div class="bubble"><span class="check-icon">✓</span>「個人売買は、交渉も手続きも面倒そう」</div>
+        <div class="flow-arrow">▼</div>
+        <p class="answer"><strong>面倒なやり取りは全部代行</strong>します。問い合わせ対応・価格交渉・名義変更・受渡し調整まで、トラブルの窓口もこちらです。</p>
       </div>
-      <div class="check-row">
-        <span class="check-icon">✓</span>
-        <div>
-          <p class="voice">「売るか迷っていて、まだ決められない」</p>
-          <p class="answer"><strong>相談・概算査定だけでもOK</strong>です。写真と車種を送るだけで目安をお返しします。無理な営業は一切しません。</p>
-        </div>
+      <div class="check-card">
+        <div class="bubble"><span class="check-icon">✓</span>「売るか迷っていて、まだ決められない」</div>
+        <div class="flow-arrow">▼</div>
+        <p class="answer"><strong>相談・概算査定だけでもOK</strong>です。写真と車種を送るだけで目安をお返しします。無理な営業は一切しません。</p>
       </div>
-      <div class="check-row">
-        <span class="check-icon">✓</span>
-        <div>
-          <p class="voice">「個人売買で出しているけど、なかなか売れない」</p>
-          <p class="answer"><strong>当店のInstagramや各プラットフォームで販売</strong>します。個人で出品するのとは買い手との接点が変わり、売れるまでの対応も代行します。</p>
-        </div>
+      <div class="check-card">
+        <div class="bubble"><span class="check-icon">✓</span>「個人売買で出しているけど、なかなか売れない」</div>
+        <div class="flow-arrow">▼</div>
+        <p class="answer"><strong>当店のInstagramや各プラットフォームで販売</strong>します。個人で出品するのとは買い手との接点が変わり、売れるまでの対応も代行します。</p>
       </div>
       <div class="check-foot">
         <p>1つでも当てはまったら、まずは相談だけでも。</p>
